@@ -1,2 +1,4 @@
 db.sqlite3
-rango/__pycache__/
+__pycache__/
+*.pyc
+.vscode/
