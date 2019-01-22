@@ -13,6 +13,8 @@ def index(request):
 
 def about(request):
     context_dict = {'username': "Misahael"}
+    print(request.method)
+    print(request.user)
     return render(request, 'rango/about.html', context=context_dict)
 
 
@@ -49,7 +51,7 @@ def add_page(request, category_name_slug):
     try:
         category = Category.objects.get(slug=category_name_slug)
     except Category.DoesNotExist:
-            category = None
+        category = None
 
     form = PageForm()
     if request.method == 'POST':
