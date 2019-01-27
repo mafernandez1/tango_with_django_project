@@ -1,4 +1,25 @@
+from selenium.webdriver.common.keys import Keys
 from rango.models import Category, Page
+
+def login(self):
+    self.browser.get(self.live_server_url + '/admin/')
+
+    # Types username and password
+    username_field = self.browser.find_element_by_name('username')
+    username_field.send_keys('admin')
+
+    password_field = self.browser.find_element_by_name('password')
+    password_field.send_keys('admin')
+    password_field.send_keys(Keys.RETURN)
+
+def user_login(self):
+    # Types username and password
+    username_field = self.browser.find_element_by_name('username')
+    username_field.send_keys('admin')
+
+    password_field = self.browser.find_element_by_name('password')
+    password_field.send_keys('admin')
+    password_field.send_keys(Keys.RETURN)
 
 def create_categories():
     # List of categories
